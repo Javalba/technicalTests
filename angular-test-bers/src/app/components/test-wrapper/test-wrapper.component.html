@@ -1,0 +1,131 @@
+<div class="ejemplo-fixed">
+  <p>FIXED</p>
+</div>
+
+<h2>PREGUNTA 1</h2>
+<p>1. Implementa una función que recorra un arrayde enteros recibida por parámetro y busque/devuelva el valor máximo</p>
+<p>Numeros = [34, 2, -3, 42, 7, 8];</p>
+<p>Resultado = {{result1}}</p>
+Array introducido: [{{array}}]
+<p>Resultado max prompt = {{result2}}</p>
+
+<button (click)="open1()">Pregunta 1</button>
+
+
+<h2>PREGUNTA 2</h2>
+<p>2. Implementa una función de debouncingen una propiedad del window que reciba dos parámetros: -Una función a la que llamaremos
+  al finalizar -El tiempo que tenemos que esperar.</p>
+
+<p>Respuesta:</p>
+<p>No sabría responder, no entiendo bien la pregunta</p>
+<!-- <button (click)="open2()">Pregunta 2</button> -->
+
+<h2>PREGUNTA 3</h2>
+<p>¿Conoces el patrón Módulo? En caso afirmativo, implementa un pequeño modulo que sea autoejecutable. Este módulo deberá contener
+  3 métodos públicos: a. Uno para setearun mensaje b. Uno que devolverá el mensaje almacenado c. Un último método que lanzará
+  un alertcon el mensaje almacenado (El módulo deberá ser instanciado en una propiedad del window.)</p>
+
+<button (click)="open3()">Pregunta 3</button>
+
+<p>Mensaje escrito por el modulo: {{msg3}}</p>
+
+
+<h2>PREGUNTA 4</h2>
+<p>Utilizando jQueryimplementa un módulo que registre un evento clicksobre un botón con id "BtnPrueba" y que lance un alertcon
+  un mensaje, puedes modificar el módulo anterior para que tenga esta nueva funcionalidad.</p>
+<button id="BtnPrueba">Pregunta 4</button>
+
+<p>
+  Esta función ya la implemta Angular con la propiedad (click), que he estado usando en los anteriores ejercicios.
+</p>
+
+
+<h2>PREGUNTA 5</h2>
+<p>Usando AngularJS1.x y jQuery1.x (puedes usar un CDN), realiza una página sencilla con dos tabs, cada uno de ellos gestionado
+  por un controllerdistinto. Ambos tabstendrán una caja de texto de tipo numbery un botón de aumentar +1 el valor. El botón
+  de cada tabaumenta el valor de la caja del otro tab.</p>
+<p>Respuesta:</p>
+<p> Angular 1 no he tocado. En Angular 2 no existen los Controllers, se podría implementar con dos componentes. Uno padre y otro
+  hijo, en el que el componente padre al apretar el boton le pasase un boolean que activara el contador del hijo, y la misma
+  logica en el hijo La información se pasaría a través de las propiedades Input (para enviar informacion al hijo) y Output(para
+  recibir informacion al padre). Otra forma seria gestionar el valor de los numeros de las cajas a través de un Service que
+  gestionara los valores de las cajas como muestro en el ejemplo a continuación:
+</p>
+
+<app-tabs-wrapper></app-tabs-wrapper>
+
+
+<h2>PREGUNTA 6</h2>
+<p>¿Cuáles son las diferencias principales en css de los diferentes valores fixed, absolute o relative de la propiedad position?
+  ¿Puedes poner un ejemplo práctico para que usarías cada uno de los valores comentados?
+</p>
+
+<p>Respuesta:</p>
+<p>
+
+  Todas estas propiedades sirven para posicionar elementos. La principal diferencia entre ellos es la referencia que este tomará
+  para su posicionamiento respecto a ella. El valor relative es el valor por defecto que toman los objetos. El valor absolute
+  escapa al posicionamiento normal y podremos posicionarlo al elemento padre mas cercano que contenga position relative El
+  valor fixed es como el absolute pero este siempre toma el valor de referencia de la ventana del navegador y además al hacer
+  scroll se quedaría fijo.
+</p>
+
+<div class="avatar-wrapper">
+  <img class="avatar" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-128.png" alt="">
+  <p>El icono se posiciona arriba a la izquierda del elemento padre</p>
+</div>
+
+<h2>PREGUNTA 7</h2>
+<p>7. ¿Qué frameworks css conoces? ¿Has utilizado alguno? En caso afirmativo, ¿En qué te han ayudado?</p>
+<p>Respuesta</p>
+<p>El principal framework que conozco es Bootstrap, lo he utilizado para ayudarme con la maquetacion de algunos proyectos. Principalmente
+  para el responsive de la pagina utilizando las columnas y las filas para cuadrar los elementos. Aunque no es un framwork
+  como tal, tambien suelo utilizar bastante SCSS debido a que generas codigo CSS mas limpio y puedes hacer uso de variables
+  globales, imports, funciones, etc.
+</p>
+
+<h2>PREGUNTA 8</h2>
+<p>
+  8. En caso de tener que maquetar un contenedor con 3 módulos en una línea (desktop) y el mismo contenedor con dichos módulos
+  uno bajo el otro (mobile), ¿Puedes explicar cómo lo llevarías a cabo?
+</p>
+<p>Respuesta</p>
+<p>Cambiando la propiedad display de los elementos (inline-block -> horizontal , block-> uno debajo del otro) y añadiendo una
+  media querie.
+</p>
+<p>Pongo un ejemplo sencillo aquí (hacer resize de la pantalla para ver el efecto)</p>
+<div class="wrapper">
+  <li class="item">Elemento 1</li>
+  <li class="item">Elemento 2</li>
+  <li class="item">Elemento 3</li>
+</div>
+
+
+
+<p></p>
+
+<h2>PREGUNTA 9</h2>
+<p>
+  9. Pregunta Bonus: Sin dedicar más de 15 minutos, ¿Qué mejora de performance en angular propondrías para la siguiente parrilla
+  de productos? (URL: https://www.bershka.com/es/mujer/ropa/camisetasc1010193217. html)
+</p>
+<p>Respuesta</p>
+
+<p>
+  Lo primero sería identificar la arquitectura que podría tener la página. A simple vista se me ocurre la siguente estructura:
+  Componentes: - Componente Wrapper - Componente Lista - Componente Item - Componente Filtro Servicios: - ProductosService
+  El componente wrapper englobaría a todos los demás y sería el encargado de realizar la petición al servicio ProductosServices
+  para que realice la llamada http al servidor donde tengamos los productos. Una vez hecha esta llamada asíncrona obtendriamos
+  los datos y los tendriamos almacenados sin necesidad de hacer nuevas llamadas. Una vez obtenidos los pasariamos al componente
+  "Lista" mediante la propiedad Input. En este componente me crearia un bucle *ngFor para ir creando componentes Item que
+  sería cada elemento de la camiseta de forma dinámica. En el elemento lista gestionarmos la paginación así como los elementos
+  que queramos mostrar (2,3 y 6 en este caso) (sin necesidad de hacer una nueva llamada, ya que tendremos toda la información
+  guardada con la primera llamada.) Sería ir jugando con el JSON que recibamos para lograr nuestro resultado. El componente
+  filtro actuaría de la misma manera que el componente List, sería el encargado de pasarle condiciones al componente Lista
+  para que este haga una selección de los items que mostrará. Esa sería mi propuesta. Sería una buena perfomance ya que solo
+  necesitaríamos cargar la página la primera vez para obtener toda la información que necesitamos, y despues es ir jugando
+  con esa información a través de los componentes filtro y lista. En algunos sitios llaman al componente Wrapper componente
+  inteligente (Seria el encargado de las llamadas asincronas) y al resto componentes Dummy (encargados de representar esa
+  información).
+</p>
+

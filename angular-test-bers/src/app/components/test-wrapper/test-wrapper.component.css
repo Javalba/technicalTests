@@ -1,0 +1,39 @@
+.ejemplo-fixed{
+  background-color: grey;
+  position: fixed;
+  top: 0;
+  left: 90%;;
+  width: 100px;
+  height: 50px;
+}
+
+
+.avatar{
+  position: absolute;
+  top: 0;
+  left:0;
+  height: 20px;
+  width: 20px;
+}
+
+.avatar-wrapper{
+  position: relative;
+  border: 1px solid black;
+}
+
+.wrapper{
+  border: 1px solid red;
+
+}
+
+.wrapper>li{
+  border: 1px solid blue;
+  display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper li {
+    display: block;
+  }
+}
+

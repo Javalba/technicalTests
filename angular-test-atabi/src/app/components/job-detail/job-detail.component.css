@@ -1,0 +1,21 @@
+p,
+small,
+span {
+  color: #f7f7f7;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bt-1 {
+  border-top: 1px solid grey;
+}
+
+.job-title {
+  font-weight: bold;
+}
+
+.company-name {
+  font-weight: lighter;
+}

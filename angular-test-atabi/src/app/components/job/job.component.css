@@ -4,6 +4,10 @@ span {
   color: #f7f7f7;
 }
 
+a {
+  text-decoration: none;
+}
+
 .resize-img {
   height: 150px;
   width: 150px;

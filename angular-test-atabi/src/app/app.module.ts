@@ -19,6 +19,7 @@ import { JobComponent } from './components/job/job.component';
 import { JobService } from './services/job.service';
 import { SessionService } from './services/session.service';
 import { TopbarComponent } from './components/topbar/topbar.component';
+import { JobDetailComponent } from './components/job-detail/job-detail.component';
 
 
 
@@ -30,7 +31,8 @@ import { TopbarComponent } from './components/topbar/topbar.component';
     HomeComponent,
     JobsComponent,
     JobComponent,
-    TopbarComponent
+    TopbarComponent,
+    JobDetailComponent
   ],
   imports: [
     BrowserModule,

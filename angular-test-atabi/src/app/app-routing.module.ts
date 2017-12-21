@@ -1,3 +1,4 @@
+import { JobDetailComponent } from './components/job-detail/job-detail.component';
 import { JobComponent } from './components/job/job.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { NgModule } from '@angular/core';
@@ -14,7 +15,7 @@ const routes: Routes = [
 children: [
    { path: '', component: HomeComponent },
    { path: 'jobs', component: JobsComponent,canActivate: [SessionService]},
-   { path: 'jobs/view/:idDesign', component: JobComponent, canActivate: [SessionService]},
+   { path: 'jobs/view/:idJob', component: JobDetailComponent, canActivate: [SessionService]},
 ] },
   { path: 'login', component: LoginComponent, pathMatch: 'full', },
   { path: '**', redirectTo: '/'},

@@ -1,0 +1,22 @@
+$color: rgb(247, 247, 247);
+p,
+small,
+span {
+  color: $color;
+}
+
+a{
+  text-decoration:  none;
+}
+
+.bt-1{
+  border-top: 1px solid grey;
+}
+
+.job-title {
+  font-weight: bold;
+}
+
+.company-name{
+  font-weight: lighter;
+}

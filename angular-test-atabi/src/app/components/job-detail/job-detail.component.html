@@ -1,0 +1,51 @@
+<div *ngIf='jobInfo'>
+  <div class="row">
+    <div class="col-6">
+      <img class="card-img-top resize-img" src="{{jobInfo.image}}" alt="Card image cap">
+    </div>
+    <div class="col-6">
+      <div>
+        <p class="card-text company-name">{{jobInfo.company.name}}</p>
+      </div>
+      <br>
+      <div class="bt-1">
+        <i class="fa fa-money" aria-hidden="true"></i>
+        <small class="card-text">{{jobInfo.wage.actual}}€ </small>
+        <small>{{jobInfo.hours}}hours / </small>
+        <small>€{{jobInfo.wage.actual_hourly}} per hour</small>
+      </div>
+      <br>
+      <div>
+        <i class="fa fa-calendar-o" aria-hidden="true"></i>
+        <small>{{jobInfo.address.city}}</small>
+        <small class="card-text">{{jobInfo.starts_at | date: 'dd-MM-yy'}}</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <div>
+        <p class="font-weight-bold">What you'll be doing</p>
+        <p class="font-weight-light">{{jobInfo.description}}</p>
+      </div>
+    </div>
+    <div class="col-6">
+      <div>
+        <p class="font-weight-bold">About {{jobInfo.company.name}}</p>
+        <p class="font-weight-light">{{jobInfo.description}}</p>
+      </div>
+    </div>
+  </div>
+
+<!--   <div class="row">
+    <div class="col-6">
+      <p>Reviews</p>
+      <span *ngFor="let review of jobInfo.reviews">{{review}} </span>
+    </div>
+    <div class="col-6">
+      <p>Contact</p>
+    </div>
+  </div> -->
+</div>
+

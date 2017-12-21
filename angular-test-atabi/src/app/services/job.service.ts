@@ -19,16 +19,20 @@ export class JobService {
   	let headers = new Headers({ 'Authorization': 'Bearer ' + this.session.key });
     let options = new RequestOptions({ headers: headers });
 
-    console.log("headers");
-    console.log(headers);
-
-    console.log("options");
-    console.log(options);
-
   	return this.http.get(`${this.BASE_URL}/jobs`, options)
       .map((res) => res.json() )
       //...errors if any
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
+  //Get one single job by id
+  getJob(id) {
+  	let headers = new Headers({ 'Authorization': 'Bearer ' + this.session.key });
+    let options = new RequestOptions({ headers: headers });
+
+  	return this.http.get(`${this.BASE_URL}/jobs/${id}`, options)
+      .map((res) => res.json() )
+      //...errors if any
+      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  }
 }

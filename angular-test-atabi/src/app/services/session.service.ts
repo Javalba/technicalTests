@@ -4,6 +4,7 @@ import { Router, CanActivate } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class SessionService {
@@ -13,7 +14,7 @@ export class SessionService {
   public isAuth: boolean = false;
   public user = {};
 
-  private BASE_URL: string = 'https://staging.api.wurcly.com/v1';
+  private BASE_URL: string = environment.baseAPI;
 
   constructor(
     private http: Http,
@@ -29,6 +30,7 @@ export class SessionService {
   canActivate() {
   	if (localStorage.getItem('key')) {
       this.isAuth = true;
+      this.key = localStorage.getItem('key');
       return true;
   	}else{
   		this.logout();

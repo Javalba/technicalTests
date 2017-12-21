@@ -1,3 +1,38 @@
-<p>
-  job works!
-</p>
+<div class="card">
+  <img class="card-img-top resize-img" src="{{jobItem.image}}" alt="Card image cap">
+  <div class="card-block">
+    <span class="card-text company-name">{{jobItem.company.name}}</span>
+    <div class="d-flex justify-content-between">
+        <p class="card-text job-title">{{jobItem.title}}</p>
+        <p class="card-text wage-actual">{{jobItem.wage.actual}}€</p>
+    </div>
+
+    <div class="d-flex justify-content-between ">
+        <small class="card-text">{{jobItem.starts_at | date: 'dd-MM-yy'}}</small>
+        <div class="d-flex justify-content-end">
+          <small>{{jobItem.hours}}hours / </small>
+          <small>€{{jobItem.wage.actual_hourly}} per hour</small>
+        </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!--   <div class="card">
+      <img class="card-img-top resize-img" src="{{jobItem.image}}" alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title font-title">{{jobItem.title}}</h4>
+        <h4 class="card-title font-title">{{jobItem.subtitle}}</h4>
+        <br>
+      </div>
+      <div class="card-footer">
+        <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
+        <small class="text-muted">
+            <span>{{jobItem.description}}</span>
+            <br>
+        </small>
+      </div>
+    </div> -->
+
+    <!--      <a [routerLink]="['/gnomeItem.name', gnomeItem.id]" role="button"> -->

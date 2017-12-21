@@ -1,0 +1,29 @@
+.container-wrapper{
+  margin: 0 auto;
+}
+
+
+ol{
+  list-style: none;
+}
+
+.list-wrapper {
+  padding: 27px 0 27px;
+  max-width: 2700px;
+  @media screen and (max-width: 767px) {
+    max-width: 420px;
+  }
+  @media screen and (max-width: 1169px) and (min-width: 961px) {
+    max-width: 900px;
+  }
+  @media screen and (max-width: 1539px) and (min-width: 1411px) {
+    max-width: 1350px;
+  }
+  @media screen and (max-width: 1909px) and (min-width: 1861px) {
+    max-width: 1800px;
+  }
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 0 auto;
+}

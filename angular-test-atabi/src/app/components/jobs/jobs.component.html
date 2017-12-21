@@ -1,3 +1,22 @@
-<p>
-  jobs works!
-</p>
+<div class='container-fluid'>
+  <div class="container-wrapper">
+    <div *ngIf='jobsList'>
+
+      <div class="row">
+        <div class="col-12">
+          <p class="title">Jobs</p>
+        </div>
+      </div>
+      <!--       <designs-list [designsList]="designsList"></designs-list> -->
+      <div id="content" class="main-full">
+          <ol class="list-wrapper">
+            <li class="item" *ngFor="let job of jobsList">
+               <app-job [jobItem]="job"> </app-job>
+            </li>
+          </ol>
+        </div>
+    </div>
+
+  </div>
+</div>
+

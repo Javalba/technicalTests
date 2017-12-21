@@ -1,7 +1,8 @@
+$color: rgb(247, 247, 247);
 p,
 small,
 span {
-  color: #f7f7f7;
+  color: $color;
 }
 
 .resize-img {
@@ -12,26 +13,26 @@ span {
 .card {
   margin: 5px;
   width: 350px;
-}
-
-.card:hover {
-  border: 2px solid #255555;
-  cursor: pointer;
+  &:hover {
+    border: 2px solid rgb(37, 85, 85);
+    cursor: pointer;
+  }
 }
 
 .card-block {
-  background-color: #2b323a;
+  background-color: rgb(43, 50, 58);
 }
 
 .wage-actual {
   font-weight: bold;
-  color: #109696;
+  color: rgb(16, 150, 150);
 }
 
 .job-title {
   font-weight: bold;
 }
 
-.company-name {
+.company-name{
   font-weight: lighter;
 }
+

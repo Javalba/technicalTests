@@ -1,3 +1,15 @@
-<p>
-  layout works!
-</p>
+<app-topbar></app-topbar>
+<div class="container-fluid">
+    <div *ngIf='currentUser  else userNotLogged'>
+    <router-outlet></router-outlet>
+  </div>
+
+  <ng-template #userNotLogged>
+    <div class="wrap-inner">
+          <div class="initial-message">
+              <h2>Login first</h2>
+              <a class="btn" [routerLink]="['/login']">Login! →</a>
+          </div>
+    </div>
+  </ng-template>
+</div>

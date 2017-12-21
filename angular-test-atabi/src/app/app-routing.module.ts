@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: '', component: LayoutComponent,
 children: [
    { path: '', component: HomeComponent },
-   { path: 'jobs', component: JobsComponent},
+   { path: 'jobs', component: JobsComponent,canActivate: [SessionService]},
    { path: 'jobs/view/:idDesign', component: JobComponent, canActivate: [SessionService]},
 ] },
   { path: 'login', component: LoginComponent, pathMatch: 'full', },

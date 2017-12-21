@@ -20,16 +20,28 @@ export class SessionService {
     private router: Router
   ) {}
 
+	checkUser() {
+    return localStorage.getItem('user');
+   }
+
+
+  //To control only who have key can access to jobs view
+  canActivate() {
+  	if (localStorage.getItem('key')) {
+      this.isAuth = true;
+      return true;
+  	}else{
+  		this.logout();
+  		return false
+  	}
+  }
+
+
+  //Login
   login(user) {
-    console.log("HOLA");
-    console.log(user);
-
-
     return this.http.post(`${this.BASE_URL}/login`, user)
       .map((res) => res.json())
       .map((res) => {
-        console.log("LLEGA AQUI");
-
         let user_id = res.user_id;
         let email = res.email;
         let key = res.key;
@@ -57,6 +69,16 @@ export class SessionService {
           return false;
         }
       })
+  }
+
+  //logout session
+  logout() {
+  	this.key = null;
+  	this.user = null;
+  	this.isAuth = false;
+  	localStorage.removeItem('key');
+  	localStorage.removeItem('user');
+  	this.router.navigate(['/login']);
   }
 
 }

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
+  currentUser: any = JSON.parse(localStorage.getItem('user'));
+
   constructor() { }
 
   ngOnInit() {

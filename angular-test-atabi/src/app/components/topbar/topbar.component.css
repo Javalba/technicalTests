@@ -1,0 +1,8 @@
+.navbar {
+  background-color: #e4e4e4;
+  border-bottom: 1px solid #8a8a8a;
+}
+
+.navbar-nav > li {
+  padding-left: 10px;
+}

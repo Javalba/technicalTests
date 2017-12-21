@@ -1,0 +1,10 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <ul class="navbar-nav mr-auto d-flex align-items-center">
+    <li class="nav-item" *ngIf="checkUser()">
+      <a class="nav-link" href="#" (click)="logout()">Logout</a>
+    </li>
+    <li class="nav-item" *ngIf="!checkUser()">
+      <a class="btn-login" [routerLink]="['/login']">Login</a>
+    </li>
+  </ul>
+</nav>

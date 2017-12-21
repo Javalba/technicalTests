@@ -1,0 +1,20 @@
+
+<div class="login-wrapper">
+	<!--<div class="row">
+		<div class="col-12 col-lg-12">-->
+	<div class="row wraper-all">
+	  <div class="col-12 login">
+	    <h1>Login</h1>
+        <form (ngSubmit)="submitLogin()" #myForm="ngForm">
+				  <input type="text" class="form-control" id="InputEmail" placeholder="Email" [(ngModel)]="user.email" name="email" required>
+				  <input type="password" class="form-control" id="InputPassword" placeholder="Contraseña" [(ngModel)]="user.password" name="password" required>
+				  <div *ngIf="error" class="alert alert-danger alert-login" role="alert">{{ error.statusText }}</div>
+          <button type="submit" class="btn btn-block btn-large">Iniciar sesión</button>
+      </form>
+  	</div>
+
+	<!--</div>
+	  </div>-->
+	</div>
+</div>
+

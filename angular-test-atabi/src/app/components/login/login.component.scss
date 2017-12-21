@@ -1,0 +1,41 @@
+
+$bg-color: #e2e2e2;
+$border: 2px solid #d7d7d8;
+
+.login-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  //background: linear-gradient(135deg,#1e5799 20%, #092756 80%);
+  background:  #f7f7f7;
+}
+
+.wraper-all {
+  margin: 0 auto ;
+  width: 700px;
+  padding: 60px 0;
+  margin-top: 100px;
+}
+
+.login {
+  padding-right: 15px;
+  padding-bottom: 30px;
+}
+
+.btn{
+  display: block;
+  background-color: $bg-color;
+  border: $border;
+  margin-top: 10px;
+  width: 100%;
+  &:hover{
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+  &:focus{
+    box-shadow: none;
+  }
+}
